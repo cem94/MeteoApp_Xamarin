@@ -1,35 +1,35 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace MeteoApp
 {
     public class MeteoListViewModel : BaseViewModel
     {
-        ObservableCollection<Entry> _entries;
+        static ObservableCollection<Weather> _weathers;
 
-        public ObservableCollection<Entry> Entries
+        public ObservableCollection<Weather> Weathers
         {
-            get { return _entries; }
+            get { return _weathers; }
             set
             {
-                _entries = value;
+                _weathers = value;
                 OnPropertyChanged();
             }
         }
 
         public MeteoListViewModel()
         {
-            Entries = new ObservableCollection<Entry>();
+            Weathers = new ObservableCollection<Weather>();
+        }
 
-            for (var i = 0; i < 10; i++)
+        public void UpdateWeather(Weather weather) 
+        {
+            for (int i = 0; i < _weathers.Count; i++) 
             {
-                var e = new Entry
+                if (_weathers[i].Location.ID == weather.Location.ID) 
                 {
-                    ID = i,
-                    Name = "Entry " + i
-                };
-
-                Entries.Add(e);
+                    _weathers[i]= weather;
+                    return;
+                }
             }
         }
     }

@@ -20,7 +20,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Entry.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\MeteoListPage.xaml.cs">
       <DependentUpon>MeteoListPage.xaml</DependentUpon>
     </Compile>
@@ -29,10 +28,15 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MeteoListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\_BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Location.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\DataBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Weather.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MeteoItemViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
   </ItemGroup>
 </Project>

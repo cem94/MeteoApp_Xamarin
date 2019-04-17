@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Acr.UserDialogs;
+using System;
 
 namespace MeteoApp.Droid
 {
@@ -22,6 +20,9 @@ namespace MeteoApp.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            //Necessary for init the dialog whit user
+            UserDialogs.Init(this);
         }
 
         // Request permission
@@ -29,6 +30,7 @@ namespace MeteoApp.Droid
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            Console.WriteLine("Permission request");
         }
     }
 }

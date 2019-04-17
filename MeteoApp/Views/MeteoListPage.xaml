@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MeteoApp" x:Class="MeteoApp.MeteoListPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" BackgroundImage="backgroundImage.jpg" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:MeteoApp" x:Class="MeteoApp.MeteoListPage">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" Clicked="OnItemAdded">
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-        <On Platform="Android, UWP" Value="plus.png" />
-    </OnPlatform>
+                    <On Platform="Android, UWP" Value="plus.png"/>
+                </OnPlatform>
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    <ListView x:Name="listView" Margin="20" ItemSelected="OnListItemSelected" ItemsSource="{Binding Entries}">
+    <ListView x:Name="listView" Margin="0,20,0,20" ItemSelected="OnListItemSelected" ItemsSource="{Binding Weathers}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Label Text="{Binding Name}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-                        <Image Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}" />
+                    <StackLayout Margin="0,4,0,0" Orientation="Horizontal" BackgroundColor="#6A000000">
+                        <Label Text="{Binding Location.Name}" TextColor="White" Margin="20,0,0,0" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
+                        <Label Text="{Binding Temp, StringFormat= '{0: 0.00} °C'}" TextColor="White" VerticalTextAlignment="Center" HorizontalOptions="CenterAndExpand" />
+                        <Image Source="{Binding Image}" WidthRequest="100" HeightRequest="100" IsVisible="{Binding Done}" />
                     </StackLayout>
                 </ViewCell>
             </DataTemplate>

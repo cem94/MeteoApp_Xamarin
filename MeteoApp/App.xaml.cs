@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -7,13 +6,26 @@ namespace MeteoApp
 {
     public partial class App : Application
     {
+        public static DataBase database;
+        
+        public static DataBase Database
+        {
+            get
+            {
+                if (database == null)
+                    database = new DataBase();
+
+                return database;
+            }
+        }
+
         public App()
         {
             InitializeComponent();
-
+            
             var nav = new NavigationPage(new MeteoListPage())
             {
-                BarBackgroundColor = Color.LightGreen,
+                BarBackgroundColor = Color.FromRgba(0, 0, 0, 0.85),
                 BarTextColor = Color.White
             };
 

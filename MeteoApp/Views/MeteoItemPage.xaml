@@ -1,19 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MeteoApp.MeteoItemPage">
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"  BackgroundImage="backgroundImage.jpg" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MeteoApp.MeteoItemPage">
     <ContentPage.Content>
-        <RelativeLayout x:Name="container">
-            <Label Text="{Binding Name}" RelativeLayout.XConstraint="{ConstraintExpression 
-                        Type=RelativeToParent,
-                        Property=Width, 
-                        Factor=0.5,
-                        Constant=-25}"
-                   RelativeLayout.YConstraint=
-                "{ConstraintExpression 
-                        Type=RelativeToParent,
-                        Property=Height,
-                        Factor=0.5,
-                        Constant=-25}"
-            ></Label>
-        </RelativeLayout>
+        <StackLayout x:Name="MainLayout" Spacing="30">
+            <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0, 50, 0, 100" Android="0, 10, 0, 100" />
+            </StackLayout.Margin>
+            <Image x:Name="WeatherImage" Source="{Binding Weather.Image}" VerticalOptions="FillAndExpand" />
+            <Label Text="{Binding Weather.Location.Name}" TextColor="White" BackgroundColor="#6A000000" FontSize="40" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+            <Label Text="{Binding Weather.Temp, StringFormat= '{0: 0.00} °C'}" TextColor="White"  BackgroundColor="#6A000000" FontSize="28" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
