@@ -68,11 +68,12 @@ namespace MeteoApp
         {
 
             var locator = CrossGeolocator.Current; // singleton
-            var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
 
             // If geo location is not enable
             if (!locator.IsGeolocationEnabled)
                 return;
+
+            var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(30));
 
             // Get the response from API
             string response = await GetWeatherCoordinateAsync(position.Longitude, position.Latitude);
