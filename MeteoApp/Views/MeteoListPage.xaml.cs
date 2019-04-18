@@ -1,13 +1,13 @@
 ﻿using System;
-using Acr.UserDialogs;
-using Xamarin.Forms;
-using System.Threading.Tasks;
-using System.Net.Http;
-using Newtonsoft.Json.Linq;
-using System.Threading;
 using System.Collections;
+using System.Net.Http;
 using System.Reflection;
+using System.Threading;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
+using Newtonsoft.Json.Linq;
 using Plugin.Geolocator;
+using Xamarin.Forms;
 
 namespace MeteoApp
 {
@@ -260,7 +260,7 @@ namespace MeteoApp
         // Get weather from city name
         private Task<string> GetWeatherCityNameAsync(Location location)
         {
-            var httpClient = new HttpClient();
+            HttpClient httpClient = new HttpClient();
 
             string requestUrl = WeatherURL
                                + "?q=" + location.Name
@@ -272,7 +272,8 @@ namespace MeteoApp
         // Get weather from coordiante
         private async Task<string> GetWeatherCoordinateAsync(double lon, double lat)
         {
-            var httpClient = new HttpClient();
+
+            HttpClient httpClient = new HttpClient();
 
             string requestUrl = "https://api.openweathermap.org/data/2.5/weather"
                                + "?lon=" + lon
