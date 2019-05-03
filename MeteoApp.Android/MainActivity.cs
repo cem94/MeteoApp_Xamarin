@@ -4,6 +4,7 @@ using Android.Content.PM;
 using Android.OS;
 using Acr.UserDialogs;
 using System;
+using Plugin.FirebasePushNotification;
 
 namespace MeteoApp.Droid
 {
@@ -23,6 +24,8 @@ namespace MeteoApp.Droid
 
             //Necessary for init the dialog whit user
             UserDialogs.Init(this);
+
+            FirebasePushNotificationManager.ProcessIntent(this, Intent);
         }
 
         // Request permission

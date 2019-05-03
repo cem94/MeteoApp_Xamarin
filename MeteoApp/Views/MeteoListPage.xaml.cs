@@ -256,7 +256,6 @@ namespace MeteoApp
             };
         }
 
-
         // Get weather from city name
         private Task<string> GetWeatherCityNameAsync(Location location)
         {
@@ -272,7 +271,6 @@ namespace MeteoApp
         // Get weather from coordiante
         private async Task<string> GetWeatherCoordinateAsync(double lon, double lat)
         {
-
             HttpClient httpClient = new HttpClient();
 
             string requestUrl = "https://api.openweathermap.org/data/2.5/weather"

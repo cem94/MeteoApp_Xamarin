@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "85413891584",
+    "firebase_url": "https://meteoapp-26489.firebaseio.com",
+    "project_id": "meteoapp-26489",
+    "storage_bucket": "meteoapp-26489.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85413891584:android:70f77ed8a230d39f",
+        "android_client_info": {
+          "package_name": "MeteoApp.Android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85413891584-i9o2ium6504338pciolg98cjvai04qri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsz2_oNtL_SXz4g1OhPSl2FSq1Ep2gl9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85413891584-i9o2ium6504338pciolg98cjvai04qri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
